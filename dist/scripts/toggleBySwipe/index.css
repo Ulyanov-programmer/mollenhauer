@@ -1,0 +1,8 @@
+swipe-area {
+  touch-action: none;
+  cursor: grab;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  display: block
+}
