@@ -317,7 +317,7 @@
     position: relative;
     display: grid;
     gap: 0 clamp(25px, calc(100 * 100vw / 1728), 100px);
-    grid-template: 'gap gap' var(--gap) 'first second' minmax(auto, calc(100vh - var(--gap) * 2)) 'gap2 gap2' calc(var(--gap) * 2) 'text text' clamp(400px, calc(500 * 100vw / 1728), 500px) 'formula plan' auto/1fr 1fr;
+    grid-template: 'gap gap' var(--gap) 'first second' calc(100vh - var(--gap) * 2) 'gap2 gap2' calc(var(--gap) * 2) 'text text' clamp(400px, calc(500 * 100vw / 1728), 500px) 'formula plan' auto/1fr 1fr;
     align-items: center;
     margin-bottom: var(--gap);
     padding-inline: var(--content-inline-padding);
@@ -662,7 +662,7 @@
     -moz-column-gap: 30px;
     column-gap: 30px
   }
-  body #team team-grid > section:first-of-type > * {
+  body #team team-grid > section:first-of-type > *:not(aside) {
     grid-column: span 3
   }
   @media (max-width: 1024px) {
@@ -675,6 +675,11 @@
     body #team team-grid > section:first-of-type {
       gap: 25px;
       margin-top: 100px
+    }
+  }
+  @media (max-width: 600px) {
+    body #team team-grid > section:first-of-type {
+      margin-top: 0
     }
   }
   body #team team-grid > section > aside {

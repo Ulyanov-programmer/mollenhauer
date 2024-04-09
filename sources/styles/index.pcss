@@ -378,7 +378,7 @@
       display: grid(0 clamp(25px, pxToVw(100), 100px));
       grid-template:
         'gap gap' var(--gap)
-        'first second' minmax(auto, calc(100vh - var(--gap) * 2))
+        'first second' calc(100vh - var(--gap) * 2)
         'gap2 gap2' calc(var(--gap) * 2)
         'text text' clamp(400px, pxToVw(500px), 500px)
         'formula plan' auto
@@ -756,7 +756,7 @@
           &:first-of-type {
             column-gap: 30px;
 
-            > * {
+            > *:not(aside) {
               grid-column: span 3;
             }
 
@@ -770,6 +770,9 @@
             @media (width <= 1200px) {
               gap: 25px;
               margin-top: 100px;
+            }
+            @media (width <= 600px) {
+              margin-top: 0;
             }
           }
 
