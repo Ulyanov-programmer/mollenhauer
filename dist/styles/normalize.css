@@ -313,14 +313,14 @@ thirdLevel;
     letter-spacing: -0.02em
   }
   h2 {
-    font-weight: 700;
     font-size: clamp(30px, calc(40 * 100vw / 1728), 40px);
+    font-weight: 700;
     line-height: 100%;
     letter-spacing: -0.03em
   }
   h3 {
-    font-weight: 900;
     font-size: 28px;
+    font-weight: 900;
     line-height: 120%;
     letter-spacing: -0.04em
   }
@@ -357,5 +357,14 @@ thirdLevel;
   inline-container {
     container-type: inline-size;
     display: block
+  }
+  [hidden] {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    white-space: nowrap;
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%)
   }
 }

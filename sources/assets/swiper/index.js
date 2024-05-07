@@ -53,6 +53,11 @@ let planningSliderText = new Swiper(`#planning-slider-text`, {
   parallax: true,
 })
 
+
+const planningSliderListItems = document.querySelectorAll(
+  'pagination-block ol[hidden] li'
+)
+
 let planningSlider = new Swiper(`#planning-slider`, {
   slidesPerView: 1,
   effect: 'fade',
@@ -63,9 +68,17 @@ let planningSlider = new Swiper(`#planning-slider`, {
     nextEl: `#planning-slider-next`, prevEl: `#planning-slider-prev`,
     disabledClass: 'inactive',
   },
-  hashNavigation: {
-    replaceState: true,
-    watchState: true,
+  pagination: {
+    el: `#planning-slider-pag`,
+    clickable: true,
+    bulletClass: 'bullet',
+    bulletActiveClass: 'current',
+
+    renderBullet: function (index, className) {
+      return '<li class="' + className + '">'
+        + planningSliderListItems[index].innerHTML
+        + '</li>'
+    }
   },
 })
 

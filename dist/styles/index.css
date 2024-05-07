@@ -776,11 +776,11 @@
     -o-object-fit: cover;
     object-fit: cover
   }
-  body #planning hash-nav {
+  body #planning pagination-block {
     position: relative;
     grid-area: nav
   }
-  body #planning hash-nav ol {
+  body #planning pagination-block ol {
     position: absolute;
     z-index: 1;
     inset: 0 0 auto auto;
@@ -791,7 +791,7 @@
     background: #fff;
     box-shadow: 0 0 30px 0 rgb(6 37 91 / 10%)
   }
-  body #planning hash-nav ol li {
+  body #planning pagination-block ol li {
     --padding: 20px;
     counter-increment: plans-counter;
     display: grid;
@@ -800,52 +800,59 @@
     font-size: 20px;
     font-weight: 600;
     line-height: 85%;
+    color: #a8acad;
     letter-spacing: -0.05em
   }
-  body #planning hash-nav ol li:not(:last-child) {
+  body #planning pagination-block ol li.current {
+    color: var(--main-text-color)
+  }
+  body #planning pagination-block ol li.current header:after {
+    opacity: 1
+  }
+  body #planning pagination-block ol li:not(:last-child) {
     background: url('../images/icons/vertical_small_border.svg');
     background-repeat: no-repeat;
     background-position: right center;
     background-size: 2px calc(100% - var(--padding) * 1.5)
   }
-  body #planning hash-nav ol li header::before {
+  body #planning pagination-block ol li header::before {
     content: '0' counter(plans-counter)
   }
-  body #planning hash-nav ol li header::after {
+  body #planning pagination-block ol li header::after {
     content: url('../images/icons/plus_black.svg');
     translate: 0 100%;
-    display: inline-block
+    display: inline-block;
+    opacity: 0.5
   }
-  body #planning hash-nav ol li a {
+  body #planning pagination-block ol li a {
     max-height: 145px;
     text-decoration-color: transparent;
     text-decoration-line: underline;
     text-decoration-thickness: 1px;
     transition: all 0.2s ease
   }
-  body #planning hash-nav ol li a:hover,
-  body #planning hash-nav ol li a:focus-visible {
+  body #planning pagination-block ol li a:focus-visible {
     text-decoration-color: currentcolor
   }
   @media (min-width: 426px) and (max-width: 769px) {
-    body #planning hash-nav ol li {
+    body #planning pagination-block ol li {
       gap: 25px
     }
   }
   @media (min-width: 1240.02px) {
-    body #planning hash-nav ol {
+    body #planning pagination-block ol {
       justify-content: end;
       width: -moz-max-content;
       width: max-content;
       height: 100%;
       padding-inline: 40px
     }
-    body #planning hash-nav ol > * {
+    body #planning pagination-block ol > * {
       width: 180px
     }
   }
   @media (max-width: 1024px) {
-    body #planning hash-nav ol {
+    body #planning pagination-block ol {
       /* colors, button / track */
       scrollbar-color: #a8acad #fff;
       /* size */
@@ -858,16 +865,16 @@
       grid-auto-columns: 50%;
       grid-auto-flow: column
     }
-    body #planning hash-nav ol::-webkit-scrollbar {
+    body #planning pagination-block ol::-webkit-scrollbar {
       /* size */
       width: auto;
       height: auto
     }
-    body #planning hash-nav ol::-webkit-scrollbar-track {
+    body #planning pagination-block ol::-webkit-scrollbar-track {
       /* track color */
       background: #fff
     }
-    body #planning hash-nav ol::-webkit-scrollbar-thumb {
+    body #planning pagination-block ol::-webkit-scrollbar-thumb {
       /* button color */
       background: #a8acad;
       /* padding size border color */
@@ -875,17 +882,17 @@
       /* rounding of the button */
       border-radius: 0
     }
-    body #planning hash-nav ol > * {
+    body #planning pagination-block ol > * {
       scroll-snap-align: start
     }
   }
   @media (max-width: 550px) {
-    body #planning hash-nav ol {
+    body #planning pagination-block ol {
       grid-auto-columns: 85%
     }
   }
   @media (max-width: 1024px) {
-    body #planning hash-nav {
+    body #planning pagination-block {
       width: 100cqw
     }
   }
@@ -935,7 +942,7 @@
       gap: 20px;
       justify-items: end
     }
-    body #planning hash-nav ol {
+    body #planning pagination-block ol {
       position: static
     }
     body #planning #planning-slider-text swiper-slide hgroup {

@@ -8,8 +8,8 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="description" content="description">
     <meta name="theme-color" content="#000000">
-    <link rel="icon" href="./img/favicon.svg">
-    <link rel="mask-icon" href="./img/favicon.svg" color="#000000">
+    <link rel="icon" href="./images/favicon.svg">
+    <link rel="mask-icon" href="./images/favicon.svg" color="#000000">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="preload" href="./fonts/SourceSansPro-Regular.woff2" as="font" type="font/woff2" crossorigin="">
     <title>Mollenhauer</title>
@@ -300,8 +300,8 @@
             </swiper-slide>
           </div>
         </swiper-slider>
-        <hash-nav>
-          <ol>
+        <pagination-block>
+          <ol hidden="">
             <li>
               <header></header>
               <a href="#slide-1" target="_self" rel="noreferrer">
@@ -333,7 +333,9 @@
           </a>
             </li>
           </ol>
-        </hash-nav>
+          <!-- For slider only -->
+          <ol id="planning-slider-pag"></ol>
+        </pagination-block>
         <buttons-block>
           <button type="button" id="planning-slider-prev">
             <svg width="72" height="73" viewBox="0 0 72 73" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -882,7 +882,7 @@
         }
       }
 
-      hash-nav {
+      pagination-block {
         position: relative;
         grid-area: nav;
 
@@ -906,7 +906,18 @@
             font-size: 20px;
             font-weight: 600;
             line-height: 85%;
+            color: #a8acad;
             letter-spacing: -0.05em;
+
+            &.current {
+              color: var(--main-text-color);
+
+              header {
+                &:after {
+                  opacity: 1;
+                }
+              }
+            }
 
             &:not(:last-child) {
               background: url('../images/icons/vertical_small_border.svg');
@@ -924,6 +935,7 @@
                 content: url('../images/icons/plus_black.svg');
                 translate: 0 100%;
                 display: inline-block;
+                opacity: 0.5;
               }
             }
 
@@ -936,7 +948,6 @@
 
               transition: all 0.2s ease;
 
-              &:hover,
               &:focus-visible {
                 text-decoration-color: currentcolor;
               }
@@ -1079,7 +1090,7 @@
         gap: 20px;
         justify-items: end;
 
-        hash-nav {
+        pagination-block {
           ol {
             position: static;
           }
