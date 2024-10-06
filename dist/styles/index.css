@@ -778,7 +778,8 @@
   }
   body #planning pagination-block {
     position: relative;
-    grid-area: nav
+    grid-area: nav;
+    background: #fff
   }
   body #planning pagination-block ol {
     position: absolute;
@@ -788,8 +789,8 @@
     display: flex;
     gap: 0;
     flex-flow: row nowrap;
-    background: #fff;
-    box-shadow: 0 0 30px 0 rgb(6 37 91 / 10%)
+    /* For unknown reasons, background is not working. */
+    box-shadow: inset 100vw 0px 50px rgb(255, 255, 255),0 0 30px 0 rgb(6 37 91 / 10%)
   }
   body #planning pagination-block ol li {
     --padding: 20px;

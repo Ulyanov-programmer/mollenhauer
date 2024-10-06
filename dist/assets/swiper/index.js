@@ -55,7 +55,7 @@ let planningSliderText = new Swiper(`#planning-slider-text`, {
 
 
 const planningSliderListItems = document.querySelectorAll(
-  'pagination-block ol[hidden] li'
+  '#real-ol-for-planning li'
 )
 
 let planningSlider = new Swiper(`#planning-slider`, {
@@ -73,6 +73,7 @@ let planningSlider = new Swiper(`#planning-slider`, {
     clickable: true,
     bulletClass: 'bullet',
     bulletActiveClass: 'current',
+    horizontalClass: null,
 
     renderBullet: function (index, className) {
       return '<li class="' + className + '">'

@@ -885,14 +885,16 @@
       pagination-block {
         position: relative;
         grid-area: nav;
+        background: #fff;
 
         ol {
           @mixin absolute 0 0 auto auto, 1;
 
           counter-reset: plans-counter;
           display: flex(0, row nowrap);
-          background: #fff;
-          box-shadow: 0 0 30px 0 rgb(6 37 91 / 10%);
+          /* For unknown reasons, background is not working. */
+          box-shadow: inset 100vw 0px 50px rgb(255, 255, 255),
+            0 0 30px 0 rgb(6 37 91 / 10%);
 
           li {
             --padding: 20px;
